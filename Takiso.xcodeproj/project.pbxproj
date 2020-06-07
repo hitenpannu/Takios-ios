@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */; };
+		983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */; };
+		983FCCC4248CCDAD00B9F064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC3248CCDAD00B9F064 /* ViewController.swift */; };
+		983FCCC7248CCDAD00B9F064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCC5248CCDAD00B9F064 /* Main.storyboard */; };
+		983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */; };
+		983FCCCC248CCDAE00B9F064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCCB248CCDAE00B9F064 /* Assets.xcassets */; };
+		983FCCCF248CCDAE00B9F064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */; };
+		983FCCDA248CCDAE00B9F064 /* TakisoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCD9248CCDAE00B9F064 /* TakisoTests.swift */; };
+		983FCCE5248CCDAE00B9F064 /* TakisoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCE4248CCDAE00B9F064 /* TakisoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		983FCCD6248CCDAE00B9F064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 983FCCB4248CCDAD00B9F064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 983FCCBB248CCDAD00B9F064;
+			remoteInfo = Takiso;
+		};
+		983FCCE1248CCDAE00B9F064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 983FCCB4248CCDAD00B9F064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 983FCCBB248CCDAD00B9F064;
+			remoteInfo = Takiso;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		983FCCBC248CCDAD00B9F064 /* Takiso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takiso.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		983FCCC3248CCDAD00B9F064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		983FCCC6248CCDAD00B9F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		983FCCC9248CCDAD00B9F064 /* Takiso.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Takiso.xcdatamodel; sourceTree = "<group>"; };
+		983FCCCB248CCDAE00B9F064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		983FCCCE248CCDAE00B9F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		983FCCD0248CCDAE00B9F064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983FCCD5248CCDAE00B9F064 /* TakisoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakisoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		983FCCD9248CCDAE00B9F064 /* TakisoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakisoTests.swift; sourceTree = "<group>"; };
+		983FCCDB248CCDAE00B9F064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983FCCE0248CCDAE00B9F064 /* TakisoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakisoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		983FCCE4248CCDAE00B9F064 /* TakisoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakisoUITests.swift; sourceTree = "<group>"; };
+		983FCCE6248CCDAE00B9F064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		983FCCB9248CCDAD00B9F064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCD2248CCDAE00B9F064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCDD248CCDAE00B9F064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		983FCCB3248CCDAD00B9F064 = {
+			isa = PBXGroup;
+			children = (
+				983FCCBE248CCDAD00B9F064 /* Takiso */,
+				983FCCD8248CCDAE00B9F064 /* TakisoTests */,
+				983FCCE3248CCDAE00B9F064 /* TakisoUITests */,
+				983FCCBD248CCDAD00B9F064 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		983FCCBD248CCDAD00B9F064 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCBC248CCDAD00B9F064 /* Takiso.app */,
+				983FCCD5248CCDAE00B9F064 /* TakisoTests.xctest */,
+				983FCCE0248CCDAE00B9F064 /* TakisoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		983FCCBE248CCDAD00B9F064 /* Takiso */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */,
+				983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */,
+				983FCCC3248CCDAD00B9F064 /* ViewController.swift */,
+				983FCCC5248CCDAD00B9F064 /* Main.storyboard */,
+				983FCCCB248CCDAE00B9F064 /* Assets.xcassets */,
+				983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */,
+				983FCCD0248CCDAE00B9F064 /* Info.plist */,
+				983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */,
+			);
+			path = Takiso;
+			sourceTree = "<group>";
+		};
+		983FCCD8248CCDAE00B9F064 /* TakisoTests */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCD9248CCDAE00B9F064 /* TakisoTests.swift */,
+				983FCCDB248CCDAE00B9F064 /* Info.plist */,
+			);
+			path = TakisoTests;
+			sourceTree = "<group>";
+		};
+		983FCCE3248CCDAE00B9F064 /* TakisoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCE4248CCDAE00B9F064 /* TakisoUITests.swift */,
+				983FCCE6248CCDAE00B9F064 /* Info.plist */,
+			);
+			path = TakisoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		983FCCBB248CCDAD00B9F064 /* Takiso */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983FCCE9248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "Takiso" */;
+			buildPhases = (
+				983FCCB8248CCDAD00B9F064 /* Sources */,
+				983FCCB9248CCDAD00B9F064 /* Frameworks */,
+				983FCCBA248CCDAD00B9F064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Takiso;
+			productName = Takiso;
+			productReference = 983FCCBC248CCDAD00B9F064 /* Takiso.app */;
+			productType = "com.apple.product-type.application";
+		};
+		983FCCD4248CCDAE00B9F064 /* TakisoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983FCCEC248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoTests" */;
+			buildPhases = (
+				983FCCD1248CCDAE00B9F064 /* Sources */,
+				983FCCD2248CCDAE00B9F064 /* Frameworks */,
+				983FCCD3248CCDAE00B9F064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				983FCCD7248CCDAE00B9F064 /* PBXTargetDependency */,
+			);
+			name = TakisoTests;
+			productName = TakisoTests;
+			productReference = 983FCCD5248CCDAE00B9F064 /* TakisoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		983FCCDF248CCDAE00B9F064 /* TakisoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983FCCEF248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoUITests" */;
+			buildPhases = (
+				983FCCDC248CCDAE00B9F064 /* Sources */,
+				983FCCDD248CCDAE00B9F064 /* Frameworks */,
+				983FCCDE248CCDAE00B9F064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				983FCCE2248CCDAE00B9F064 /* PBXTargetDependency */,
+			);
+			name = TakisoUITests;
+			productName = TakisoUITests;
+			productReference = 983FCCE0248CCDAE00B9F064 /* TakisoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		983FCCB4248CCDAD00B9F064 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Pannu, Hitender";
+				TargetAttributes = {
+					983FCCBB248CCDAD00B9F064 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					983FCCD4248CCDAE00B9F064 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 983FCCBB248CCDAD00B9F064;
+					};
+					983FCCDF248CCDAE00B9F064 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 983FCCBB248CCDAD00B9F064;
+					};
+				};
+			};
+			buildConfigurationList = 983FCCB7248CCDAD00B9F064 /* Build configuration list for PBXProject "Takiso" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 983FCCB3248CCDAD00B9F064;
+			productRefGroup = 983FCCBD248CCDAD00B9F064 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				983FCCBB248CCDAD00B9F064 /* Takiso */,
+				983FCCD4248CCDAE00B9F064 /* TakisoTests */,
+				983FCCDF248CCDAE00B9F064 /* TakisoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		983FCCBA248CCDAD00B9F064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983FCCCF248CCDAE00B9F064 /* LaunchScreen.storyboard in Resources */,
+				983FCCCC248CCDAE00B9F064 /* Assets.xcassets in Resources */,
+				983FCCC7248CCDAD00B9F064 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCD3248CCDAE00B9F064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCDE248CCDAE00B9F064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		983FCCB8248CCDAD00B9F064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983FCCC4248CCDAD00B9F064 /* ViewController.swift in Sources */,
+				983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */,
+				983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */,
+				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCD1248CCDAE00B9F064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983FCCDA248CCDAE00B9F064 /* TakisoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		983FCCDC248CCDAE00B9F064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983FCCE5248CCDAE00B9F064 /* TakisoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		983FCCD7248CCDAE00B9F064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 983FCCBB248CCDAD00B9F064 /* Takiso */;
+			targetProxy = 983FCCD6248CCDAE00B9F064 /* PBXContainerItemProxy */;
+		};
+		983FCCE2248CCDAE00B9F064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 983FCCBB248CCDAD00B9F064 /* Takiso */;
+			targetProxy = 983FCCE1248CCDAE00B9F064 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		983FCCC5248CCDAD00B9F064 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				983FCCC6248CCDAD00B9F064 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				983FCCCE248CCDAE00B9F064 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		983FCCE7248CCDAE00B9F064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		983FCCE8248CCDAE00B9F064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		983FCCEA248CCDAE00B9F064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = Takiso/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.Takiso;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		983FCCEB248CCDAE00B9F064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = Takiso/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.Takiso;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		983FCCED248CCDAE00B9F064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = TakisoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.TakisoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Takiso.app/Takiso";
+			};
+			name = Debug;
+		};
+		983FCCEE248CCDAE00B9F064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = TakisoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.TakisoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Takiso.app/Takiso";
+			};
+			name = Release;
+		};
+		983FCCF0248CCDAE00B9F064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = TakisoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.TakisoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Takiso;
+			};
+			name = Debug;
+		};
+		983FCCF1248CCDAE00B9F064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF84596M59;
+				INFOPLIST_FILE = TakisoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hitenderpannu.TakisoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Takiso;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		983FCCB7248CCDAD00B9F064 /* Build configuration list for PBXProject "Takiso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983FCCE7248CCDAE00B9F064 /* Debug */,
+				983FCCE8248CCDAE00B9F064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		983FCCE9248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "Takiso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983FCCEA248CCDAE00B9F064 /* Debug */,
+				983FCCEB248CCDAE00B9F064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		983FCCEC248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983FCCED248CCDAE00B9F064 /* Debug */,
+				983FCCEE248CCDAE00B9F064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		983FCCEF248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983FCCF0248CCDAE00B9F064 /* Debug */,
+				983FCCF1248CCDAE00B9F064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				983FCCC9248CCDAD00B9F064 /* Takiso.xcdatamodel */,
+			);
+			currentVersion = 983FCCC9248CCDAD00B9F064 /* Takiso.xcdatamodel */;
+			path = Takiso.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 983FCCB4248CCDAD00B9F064 /* Project object */;
+}
