@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,21 @@
 		983FCCCF248CCDAE00B9F064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */; };
 		983FCCDA248CCDAE00B9F064 /* TakisoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCD9248CCDAE00B9F064 /* TakisoTests.swift */; };
 		983FCCE5248CCDAE00B9F064 /* TakisoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCE4248CCDAE00B9F064 /* TakisoUITests.swift */; };
+		983FCCF5248CCE9100B9F064 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCF4248CCE9100B9F064 /* AuthManager.swift */; };
+		983FCCF7248CCEE300B9F064 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCF6248CCEE300B9F064 /* UserEntity.swift */; };
+		983FCCFA248CD03E00B9F064 /* LocalUserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCF9248CD03E00B9F064 /* LocalUserRepo.swift */; };
+		983FCCFE248CD17800B9F064 /* RemoteUserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCFD248CD17800B9F064 /* RemoteUserRepo.swift */; };
+		983FCD01248CD2EF00B9F064 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */; };
+		983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD03248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift */; };
+		983FCD06248CD42600B9F064 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD05248CD42600B9F064 /* NetworkConstants.swift */; };
+		986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7952492A7410085E7F4 /* AuthViewController.swift */; };
+		986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7972493EF300085E7F4 /* DesignableView.swift */; };
+		986BE79B2493FA8F0085E7F4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE79A2493FA8F0085E7F4 /* Validator.swift */; };
+		98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E5A248CD870002340FA /* NetworkClient.swift */; };
+		98C07E62248D2661002340FA /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E61248D2661002340FA /* AuthModule.swift */; };
+		A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */; };
+		BDBC8147AA6577894E0B419C /* Pods_Takiso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F7FCD3041354C76B4CC02B /* Pods_Takiso.framework */; };
+		D8FF081D8E91B70EC293FEB5 /* Pods_Takiso_TakisoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FD77020D2763FF82FBD8F2 /* Pods_Takiso_TakisoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3807CE20746E644C8AFBE92B /* Pods-TakisoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakisoTests.release.xcconfig"; path = "Target Support Files/Pods-TakisoTests/Pods-TakisoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A3250C811FEAD3285C2F0FF /* Pods-Takiso-TakisoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takiso-TakisoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		68B15D3B38F2141E0D58539D /* Pods-Takiso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takiso.release.xcconfig"; path = "Target Support Files/Pods-Takiso/Pods-Takiso.release.xcconfig"; sourceTree = "<group>"; };
 		983FCCBC248CCDAD00B9F064 /* Takiso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takiso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +69,24 @@
 		983FCCE0248CCDAE00B9F064 /* TakisoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakisoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		983FCCE4248CCDAE00B9F064 /* TakisoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakisoUITests.swift; sourceTree = "<group>"; };
 		983FCCE6248CCDAE00B9F064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983FCCF4248CCE9100B9F064 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		983FCCF6248CCEE300B9F064 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		983FCCF9248CD03E00B9F064 /* LocalUserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepo.swift; sourceTree = "<group>"; };
+		983FCCFD248CD17800B9F064 /* RemoteUserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserRepo.swift; sourceTree = "<group>"; };
+		983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		983FCD03248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAuthSuccessResponse.swift; sourceTree = "<group>"; };
+		983FCD05248CD42600B9F064 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		986BE7952492A7410085E7F4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		986BE7972493EF300085E7F4 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		986BE79A2493FA8F0085E7F4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		98C07E5A248CD870002340FA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		98C07E61248D2661002340FA /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
+		9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakisoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CB905F9A904456A33B0A22 /* Pods-TakisoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakisoTests.debug.xcconfig"; path = "Target Support Files/Pods-TakisoTests/Pods-TakisoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C49E0D829EAA726E9777D8E0 /* Pods-Takiso-TakisoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takiso-TakisoUITests.release.xcconfig"; path = "Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F0B25FFBF1158A397988B853 /* Pods-Takiso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takiso.debug.xcconfig"; path = "Target Support Files/Pods-Takiso/Pods-Takiso.debug.xcconfig"; sourceTree = "<group>"; };
+		F1FD77020D2763FF82FBD8F2 /* Pods_Takiso_TakisoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Takiso_TakisoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7F7FCD3041354C76B4CC02B /* Pods_Takiso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Takiso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBC8147AA6577894E0B419C /* Pods_Takiso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +110,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FF081D8E91B70EC293FEB5 /* Pods_Takiso_TakisoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3BE30D25BD18D1D46BFDCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7F7FCD3041354C76B4CC02B /* Pods_Takiso.framework */,
+				F1FD77020D2763FF82FBD8F2 /* Pods_Takiso_TakisoUITests.framework */,
+				9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65B1F6BC5FC8BD98B52F2A38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0B25FFBF1158A397988B853 /* Pods-Takiso.debug.xcconfig */,
+				68B15D3B38F2141E0D58539D /* Pods-Takiso.release.xcconfig */,
+				3A3250C811FEAD3285C2F0FF /* Pods-Takiso-TakisoUITests.debug.xcconfig */,
+				C49E0D829EAA726E9777D8E0 /* Pods-Takiso-TakisoUITests.release.xcconfig */,
+				B5CB905F9A904456A33B0A22 /* Pods-TakisoTests.debug.xcconfig */,
+				3807CE20746E644C8AFBE92B /* Pods-TakisoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		983FCCB3248CCDAD00B9F064 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +147,8 @@
 				983FCCD8248CCDAE00B9F064 /* TakisoTests */,
 				983FCCE3248CCDAE00B9F064 /* TakisoUITests */,
 				983FCCBD248CCDAD00B9F064 /* Products */,
+				65B1F6BC5FC8BD98B52F2A38 /* Pods */,
+				5B3BE30D25BD18D1D46BFDCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +165,8 @@
 		983FCCBE248CCDAD00B9F064 /* Takiso */ = {
 			isa = PBXGroup;
 			children = (
+				98C07E5D248D25B6002340FA /* coreNetwork */,
+				98C07E5C248D2514002340FA /* featureAuth */,
 				983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */,
 				983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */,
 				983FCCC3248CCDAD00B9F064 /* ViewController.swift */,
@@ -109,6 +175,8 @@
 				983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */,
 				983FCCD0248CCDAE00B9F064 /* Info.plist */,
 				983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */,
+				986BE7992493EF360085E7F4 /* customDesignable */,
+				986BE79C2493FA990085E7F4 /* utils */,
 			);
 			path = Takiso;
 			sourceTree = "<group>";
@@ -131,6 +199,70 @@
 			path = TakisoUITests;
 			sourceTree = "<group>";
 		};
+		986BE7992493EF360085E7F4 /* customDesignable */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7972493EF300085E7F4 /* DesignableView.swift */,
+			);
+			path = customDesignable;
+			sourceTree = "<group>";
+		};
+		986BE79C2493FA990085E7F4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				986BE79A2493FA8F0085E7F4 /* Validator.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		98C07E5C248D2514002340FA /* featureAuth */ = {
+			isa = PBXGroup;
+			children = (
+				98C07E5E248D261F002340FA /* repo */,
+				98C07E5F248D2628002340FA /* entity */,
+				98C07E60248D2638002340FA /* domain */,
+				98C07E61248D2661002340FA /* AuthModule.swift */,
+				986BE7952492A7410085E7F4 /* AuthViewController.swift */,
+			);
+			path = featureAuth;
+			sourceTree = "<group>";
+		};
+		98C07E5D248D25B6002340FA /* coreNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				983FCD05248CD42600B9F064 /* NetworkConstants.swift */,
+				98C07E5A248CD870002340FA /* NetworkClient.swift */,
+				983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */,
+			);
+			path = coreNetwork;
+			sourceTree = "<group>";
+		};
+		98C07E5E248D261F002340FA /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCFD248CD17800B9F064 /* RemoteUserRepo.swift */,
+				983FCCF9248CD03E00B9F064 /* LocalUserRepo.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		98C07E5F248D2628002340FA /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				983FCD03248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift */,
+				983FCCF6248CCEE300B9F064 /* UserEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		98C07E60248D2638002340FA /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				983FCCF4248CCE9100B9F064 /* AuthManager.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 983FCCE9248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "Takiso" */;
 			buildPhases = (
+				C19AC253AF47765CB37F6613 /* [CP] Check Pods Manifest.lock */,
 				983FCCB8248CCDAD00B9F064 /* Sources */,
 				983FCCB9248CCDAD00B9F064 /* Frameworks */,
 				983FCCBA248CCDAD00B9F064 /* Resources */,
+				7E2B0BDA61C8763DE0317608 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 983FCCEC248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoTests" */;
 			buildPhases = (
+				BAFCC978786377CED8CB1619 /* [CP] Check Pods Manifest.lock */,
 				983FCCD1248CCDAE00B9F064 /* Sources */,
 				983FCCD2248CCDAE00B9F064 /* Frameworks */,
 				983FCCD3248CCDAE00B9F064 /* Resources */,
@@ -173,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 983FCCEF248CCDAE00B9F064 /* Build configuration list for PBXNativeTarget "TakisoUITests" */;
 			buildPhases = (
+				74715B3FE8AE32A4D06B717D /* [CP] Check Pods Manifest.lock */,
 				983FCCDC248CCDAE00B9F064 /* Sources */,
 				983FCCDD248CCDAE00B9F064 /* Frameworks */,
 				983FCCDE248CCDAE00B9F064 /* Resources */,
+				1C7557273E061F2236FD48A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,15 +394,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C7557273E061F2236FD48A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74715B3FE8AE32A4D06B717D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Takiso-TakisoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2B0BDA61C8763DE0317608 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Takiso/Pods-Takiso-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Takiso/Pods-Takiso-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Takiso/Pods-Takiso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAFCC978786377CED8CB1619 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakisoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C19AC253AF47765CB37F6613 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Takiso-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		983FCCB8248CCDAD00B9F064 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986BE79B2493FA8F0085E7F4 /* Validator.swift in Sources */,
+				983FCCFE248CD17800B9F064 /* RemoteUserRepo.swift in Sources */,
 				983FCCC4248CCDAD00B9F064 /* ViewController.swift in Sources */,
+				98C07E62248D2661002340FA /* AuthModule.swift in Sources */,
+				983FCD06248CD42600B9F064 /* NetworkConstants.swift in Sources */,
+				983FCCF7248CCEE300B9F064 /* UserEntity.swift in Sources */,
 				983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */,
+				983FCCFA248CD03E00B9F064 /* LocalUserRepo.swift in Sources */,
+				983FCD01248CD2EF00B9F064 /* NetworkResponse.swift in Sources */,
+				986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */,
 				983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */,
 				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
+				986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */,
+				983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */,
+				983FCCF5248CCE9100B9F064 /* AuthManager.swift in Sources */,
+				98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +688,7 @@
 		};
 		983FCCEA248CCDAE00B9F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0B25FFBF1158A397988B853 /* Pods-Takiso.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +707,7 @@
 		};
 		983FCCEB248CCDAE00B9F064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68B15D3B38F2141E0D58539D /* Pods-Takiso.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +726,7 @@
 		};
 		983FCCED248CCDAE00B9F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CB905F9A904456A33B0A22 /* Pods-TakisoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +749,7 @@
 		};
 		983FCCEE248CCDAE00B9F064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3807CE20746E644C8AFBE92B /* Pods-TakisoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +772,7 @@
 		};
 		983FCCF0248CCDAE00B9F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A3250C811FEAD3285C2F0FF /* Pods-Takiso-TakisoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +793,7 @@
 		};
 		983FCCF1248CCDAE00B9F064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C49E0D829EAA726E9777D8E0 /* Pods-Takiso-TakisoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

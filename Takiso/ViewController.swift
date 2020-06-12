@@ -10,11 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private var authManager = AuthModule.instance.provideAuthManager()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if !authManager.isUserLoggedIn() {
+            print("User is not Logged IN")
+            performSegue(withIdentifier: "goToDashboard", sender: self)
+            return
+        }
+           print("User is Logged IN")
     }
-
-
 }
 

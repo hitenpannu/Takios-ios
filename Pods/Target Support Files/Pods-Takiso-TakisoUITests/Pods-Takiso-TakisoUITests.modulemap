@@ -1,0 +1,6 @@
+framework module Pods_Takiso_TakisoUITests {
+  umbrella header "Pods-Takiso-TakisoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
