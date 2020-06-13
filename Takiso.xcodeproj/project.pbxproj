@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */; };
 		983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */; };
-		983FCCC4248CCDAD00B9F064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC3248CCDAD00B9F064 /* ViewController.swift */; };
 		983FCCC7248CCDAD00B9F064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCC5248CCDAD00B9F064 /* Main.storyboard */; };
 		983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */; };
 		983FCCCC248CCDAE00B9F064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983FCCCB248CCDAE00B9F064 /* Assets.xcassets */; };
@@ -31,6 +30,19 @@
 		986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A22493FF110085E7F4 /* BaseViewModel.swift */; };
 		986BE7A5249434E30085E7F4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A4249434E30085E7F4 /* BaseView.swift */; };
 		986BE7A82494D58E0085E7F4 /* NetworkExceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A72494D58E0085E7F4 /* NetworkExceptions.swift */; };
+		986BE7B124953F350085E7F4 /* DashboardHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7B024953F350085E7F4 /* DashboardHeaderViewController.swift */; };
+		986BE7B6249544310085E7F4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7B5249544310085E7F4 /* CardView.swift */; };
+		986BE7B92495475E0085E7F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7B82495475E0085E7F4 /* ViewController.swift */; };
+		986BE7BB249547F70085E7F4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7BA249547F70085E7F4 /* DashboardViewController.swift */; };
+		986BE7BD249548D50085E7F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7BC249548D50085E7F4 /* HomeViewController.swift */; };
+		986BE7BF24956EEA0085E7F4 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7BE24956EEA0085E7F4 /* AddExerciseViewController.swift */; };
+		986BE7C424956F280085E7F4 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7C324956F280085E7F4 /* WorkoutManager.swift */; };
+		986BE7C724956F710085E7F4 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7C624956F710085E7F4 /* WorkoutEntity.swift */; };
+		986BE7CA2495712B0085E7F4 /* RemoteExerciseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7C92495712B0085E7F4 /* RemoteExerciseRepo.swift */; };
+		986BE7CD249572DF0085E7F4 /* NetworkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7CC249572DF0085E7F4 /* NetworkEntity.swift */; };
+		986BE7D0249577210085E7F4 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7CF249577210085E7F4 /* AddExerciseView.swift */; };
+		986BE7D2249577E20085E7F4 /* ExtentionUiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7D1249577E20085E7F4 /* ExtentionUiViewController.swift */; };
+		986BE7D42495786A0085E7F4 /* AddExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7D32495786A0085E7F4 /* AddExerciseViewModel.swift */; };
 		98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E5A248CD870002340FA /* NetworkClient.swift */; };
 		98C07E62248D2661002340FA /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E61248D2661002340FA /* AuthModule.swift */; };
 		A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */; };
@@ -62,7 +74,6 @@
 		983FCCBC248CCDAD00B9F064 /* Takiso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takiso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		983FCCC3248CCDAD00B9F064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		983FCCC6248CCDAD00B9F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983FCCC9248CCDAD00B9F064 /* Takiso.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Takiso.xcdatamodel; sourceTree = "<group>"; };
 		983FCCCB248CCDAE00B9F064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +100,19 @@
 		986BE7A22493FF110085E7F4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		986BE7A4249434E30085E7F4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		986BE7A72494D58E0085E7F4 /* NetworkExceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExceptions.swift; sourceTree = "<group>"; };
+		986BE7B024953F350085E7F4 /* DashboardHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderViewController.swift; sourceTree = "<group>"; };
+		986BE7B5249544310085E7F4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		986BE7B82495475E0085E7F4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Takiso/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		986BE7BA249547F70085E7F4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		986BE7BC249548D50085E7F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		986BE7BE24956EEA0085E7F4 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		986BE7C324956F280085E7F4 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		986BE7C624956F710085E7F4 /* WorkoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntity.swift; sourceTree = "<group>"; };
+		986BE7C92495712B0085E7F4 /* RemoteExerciseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExerciseRepo.swift; sourceTree = "<group>"; };
+		986BE7CC249572DF0085E7F4 /* NetworkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntity.swift; sourceTree = "<group>"; };
+		986BE7CF249577210085E7F4 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
+		986BE7D1249577E20085E7F4 /* ExtentionUiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUiViewController.swift; sourceTree = "<group>"; };
+		986BE7D32495786A0085E7F4 /* AddExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewModel.swift; sourceTree = "<group>"; };
 		98C07E5A248CD870002340FA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		98C07E61248D2661002340FA /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
 		9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakisoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,19 +199,20 @@
 		983FCCBE248CCDAD00B9F064 /* Takiso */ = {
 			isa = PBXGroup;
 			children = (
+				986BE7B7249546E50085E7F4 /* app */,
 				986BE79C2493FA990085E7F4 /* utils */,
 				986BE7992493EF360085E7F4 /* customDesignable */,
 				986BE7A6249434E90085E7F4 /* base */,
 				98C07E5D248D25B6002340FA /* coreNetwork */,
 				98C07E5C248D2514002340FA /* featureAuth */,
-				983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */,
-				983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */,
-				983FCCC3248CCDAD00B9F064 /* ViewController.swift */,
+				986BE7AC24953CDE0085E7F4 /* featureDashboard */,
 				983FCCC5248CCDAD00B9F064 /* Main.storyboard */,
 				983FCCCB248CCDAE00B9F064 /* Assets.xcassets */,
 				983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */,
 				983FCCD0248CCDAE00B9F064 /* Info.plist */,
 				983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */,
+				986BE7C024956EEF0085E7F4 /* featureWorkout */,
+				986BE7D1249577E20085E7F4 /* ExtentionUiViewController.swift */,
 			);
 			path = Takiso;
 			sourceTree = "<group>";
@@ -214,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				986BE7972493EF300085E7F4 /* DesignableView.swift */,
+				986BE7B5249544310085E7F4 /* CardView.swift */,
 			);
 			path = customDesignable;
 			sourceTree = "<group>";
@@ -243,6 +269,104 @@
 				986BE7A4249434E30085E7F4 /* BaseView.swift */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		986BE7AC24953CDE0085E7F4 /* featureDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7B224953F3F0085E7F4 /* header */,
+				986BE7AD24953CE90085E7F4 /* ui */,
+			);
+			path = featureDashboard;
+			sourceTree = "<group>";
+		};
+		986BE7AD24953CE90085E7F4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7BA249547F70085E7F4 /* DashboardViewController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		986BE7B224953F3F0085E7F4 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7B424953F560085E7F4 /* ui */,
+			);
+			path = header;
+			sourceTree = "<group>";
+		};
+		986BE7B424953F560085E7F4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7B024953F350085E7F4 /* DashboardHeaderViewController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		986BE7B7249546E50085E7F4 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7B82495475E0085E7F4 /* ViewController.swift */,
+				983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */,
+				983FCCC1248CCDAD00B9F064 /* SceneDelegate.swift */,
+				986BE7BC249548D50085E7F4 /* HomeViewController.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		986BE7C024956EEF0085E7F4 /* featureWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7C224956F0C0085E7F4 /* ui */,
+				986BE7C524956F350085E7F4 /* domain */,
+				986BE7C824956F780085E7F4 /* entity */,
+				986BE7CB249571310085E7F4 /* repo */,
+			);
+			path = featureWorkout;
+			sourceTree = "<group>";
+		};
+		986BE7C224956F0C0085E7F4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7BE24956EEA0085E7F4 /* AddExerciseViewController.swift */,
+				986BE7CF249577210085E7F4 /* AddExerciseView.swift */,
+				986BE7D32495786A0085E7F4 /* AddExerciseViewModel.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		986BE7C524956F350085E7F4 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7C324956F280085E7F4 /* WorkoutManager.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		986BE7C824956F780085E7F4 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7C624956F710085E7F4 /* WorkoutEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		986BE7CB249571310085E7F4 /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7C92495712B0085E7F4 /* RemoteExerciseRepo.swift */,
+				986BE7CE249572E30085E7F4 /* entity */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		986BE7CE249572E30085E7F4 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7CC249572DF0085E7F4 /* NetworkEntity.swift */,
+			);
+			path = entity;
 			sourceTree = "<group>";
 		};
 		98C07E5C248D2514002340FA /* featureAuth */ = {
@@ -533,27 +657,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986BE7CA2495712B0085E7F4 /* RemoteExerciseRepo.swift in Sources */,
+				986BE7BD249548D50085E7F4 /* HomeViewController.swift in Sources */,
 				986BE79B2493FA8F0085E7F4 /* Validator.swift in Sources */,
 				983FCCFE248CD17800B9F064 /* RemoteUserRepo.swift in Sources */,
-				983FCCC4248CCDAD00B9F064 /* ViewController.swift in Sources */,
 				98C07E62248D2661002340FA /* AuthModule.swift in Sources */,
 				983FCD06248CD42600B9F064 /* NetworkConstants.swift in Sources */,
 				983FCCF7248CCEE300B9F064 /* UserEntity.swift in Sources */,
+				986BE7B92495475E0085E7F4 /* ViewController.swift in Sources */,
 				983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */,
+				986BE7BB249547F70085E7F4 /* DashboardViewController.swift in Sources */,
 				986BE7A5249434E30085E7F4 /* BaseView.swift in Sources */,
 				986BE79F2493FE880085E7F4 /* AuthViewModel.swift in Sources */,
+				986BE7C424956F280085E7F4 /* WorkoutManager.swift in Sources */,
+				986BE7CD249572DF0085E7F4 /* NetworkEntity.swift in Sources */,
 				986BE7A82494D58E0085E7F4 /* NetworkExceptions.swift in Sources */,
+				986BE7B124953F350085E7F4 /* DashboardHeaderViewController.swift in Sources */,
 				986BE7A12493FEA80085E7F4 /* AuthView.swift in Sources */,
 				983FCCFA248CD03E00B9F064 /* LocalUserRepo.swift in Sources */,
 				983FCD01248CD2EF00B9F064 /* NetworkResponse.swift in Sources */,
 				986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */,
+				986BE7D42495786A0085E7F4 /* AddExerciseViewModel.swift in Sources */,
 				983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */,
+				986BE7D2249577E20085E7F4 /* ExtentionUiViewController.swift in Sources */,
 				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
 				986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */,
+				986BE7B6249544310085E7F4 /* CardView.swift in Sources */,
+				986BE7C724956F710085E7F4 /* WorkoutEntity.swift in Sources */,
 				986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */,
 				983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */,
 				983FCCF5248CCE9100B9F064 /* AuthManager.swift in Sources */,
+				986BE7BF24956EEA0085E7F4 /* AddExerciseViewController.swift in Sources */,
 				98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */,
+				986BE7D0249577210085E7F4 /* AddExerciseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

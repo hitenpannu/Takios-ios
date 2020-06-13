@@ -37,8 +37,8 @@ class LocalUserRepoImpl: LocalUserRepo {
     }
     
     func isUserLoggedIn() -> Bool {
-        let isUserIdPresent = defaults.bool(forKey: LocalUserRepoImpl.KEY_USER_ID)
-        return isUserIdPresent || isGuestLogin()
+        let isUserIdPresent = defaults.string(forKey: LocalUserRepoImpl.KEY_USER_ID)
+        return isUserIdPresent != nil || isGuestLogin()
     }
     
     func isGuestLogin() -> Bool {

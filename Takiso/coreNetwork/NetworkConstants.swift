@@ -14,6 +14,7 @@ struct NetworkConstants {
     static let ENDPOINT_LOGIN = "login"
     static let ENDPOINT_SIGNUP = "signup"
     static let ENDPOINT_LOGOUT = "logout"
+    static let ENDPOINT_EXERCISE = "exercise"
     
     
     static let STATUS_SUCCESS = 200
