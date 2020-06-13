@@ -15,9 +15,15 @@ struct NetworkUser : Decodable{
     let email: String
 }
 
-struct NetworkAuthSuccessResponse: Decodable {
+struct AuthSuccessResponse : Decodable {
     let user: NetworkUser
     let token: String
+}
+
+struct NetworkAuthSuccessResponse: NetworkResponse {
+    typealias dataType = AuthSuccessResponse
+    let status: Status
+    var data: AuthSuccessResponse?
 }
 
 struct LoginRequest : Encodable {

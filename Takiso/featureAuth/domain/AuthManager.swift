@@ -61,7 +61,7 @@ class AuthManagerImpl: AuthManager {
     func loginUser(email: String, password: String, delegate: AuthDelegate?) {
         remoteUserRepo.loginUser(email: email, password: password) { (user, error) in
             if let safeError = error {
-                delegate?.didAuthFail(errorMessage: safeError.localizedDescription)
+                delegate?.didAuthFail(errorMessage: safeError.message)
                 return
             }
             
@@ -75,7 +75,7 @@ class AuthManagerImpl: AuthManager {
     func signupUser(name: String, email: String, password: String, delegate: AuthDelegate?) {
         remoteUserRepo.signupUser(name: name, email: email, password: password) { (user, error) in
             if let safeError = error {
-                delegate?.didAuthFail(errorMessage: safeError.localizedDescription)
+                delegate?.didAuthFail(errorMessage: safeError.message)
                 return
             }
             

@@ -13,8 +13,9 @@ struct Status : Decodable {
     let message: String
 }
 
-struct NetworkResponse<T: Decodable> : Decodable {
-    let status: Status
-    let data : T? = nil
+protocol NetworkResponse : Decodable {
+    associatedtype dataType : Decodable
+    var status: Status {get}
+    var data: dataType? {get}
 }
 

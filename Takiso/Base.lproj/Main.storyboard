@@ -89,6 +89,9 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                                         <real key="value" value="-3"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" name="charcoal"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hL-x6-wSr" customClass="DesignableView" customModule="Takiso">
@@ -257,6 +260,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="charcoal">
+            <color red="0.14901960784313725" green="0.27450980392156865" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="maizeCrayola">
             <color red="0.9137254901960784" green="0.7686274509803922" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

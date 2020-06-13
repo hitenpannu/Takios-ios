@@ -10,22 +10,22 @@ import Foundation
 
 typealias OnCompletion<T: Decodable> = (T?, Error?) -> Void
 
-protocol NetworkClientDelegate {
-    func didSuccess<T: Decodable>(data: T)
-    func didFailWith(errorMessage: String)
-}
-
-typealias NetworkRequestCompletionHandler<T: Decodable> = (T?, Error?) -> Void
+typealias NetworkRequestCompletionHandler<T: NetworkResponse> = (T?, TakisoException?) -> Void
 
 protocol NetworkClient {
-    func makeRequest<T: Decodable>(networkRequest: URLRequest, completionHandler : @escaping NetworkRequestCompletionHandler<T>)
+    func makeRequest<T: NetworkResponse>(networkRequest: URLRequest, completionHandler : @escaping NetworkRequestCompletionHandler<T>)
 }
 
 class NetworkRequestBuilder{
     
+    enum RequestMethod : String {
+        case POST = "POST"
+        case GET = "GET"
+    }
+    
     var requestUrl : URL
     
-    var method: String = "GET"
+    var method: RequestMethod = RequestMethod.GET
     
     var body: Data?
     
@@ -33,6 +33,11 @@ class NetworkRequestBuilder{
     
     init(url: URL) {
         requestUrl = url
+    }
+    
+    func useMethod(method: RequestMethod) -> NetworkRequestBuilder {
+        self.method = method
+        return self
     }
     
     func addHeader(key: String, value: String) -> NetworkRequestBuilder{
@@ -53,8 +58,9 @@ class NetworkRequestBuilder{
     
     func build() -> URLRequest {
         var request = URLRequest(url: requestUrl)
-        request.httpMethod = method
+        request.httpMethod = method.rawValue
         if body != nil {
+            request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = body
         }
         if !headers.isEmpty {
@@ -68,34 +74,33 @@ class NetworkRequestBuilder{
 
 class NetworkClientImpl: NetworkClient{
     
-    func makeRequest<T: Decodable>(networkRequest: URLRequest, completionHandler : @escaping NetworkRequestCompletionHandler<T>) {
-               let task = URLSession.init(configuration: .default)
-                   .dataTask(with: networkRequest) { (data, response, error) in
-                    
-                       if let safeError = error {
-                           print(error.debugDescription)
-                           completionHandler(nil, safeError)
-                           return
-                       }
-                       
-                       if let safeData = data {
-                           let decoder = JSONDecoder()
-                           do {
-                            let networkResponse = try decoder.decode(NetworkResponse<T>.self, from: safeData)
-                            if(networkResponse.data != nil) {
-                                completionHandler(networkResponse.data, nil)
-                            }else if(networkResponse.status.code == NetworkConstants.STATUS_SUCCESS) {
-                                completionHandler(nil, nil)
-                            }else {
-                                completionHandler(nil, error)
-                            }
-                           } catch {
-                            print(error)
-                                completionHandler(nil, error)
-                           }
-                       }
-               }
-               
-               task.resume()
+    func makeRequest<T: NetworkResponse>(networkRequest: URLRequest, completionHandler : @escaping NetworkRequestCompletionHandler<T>) {
+        let task = URLSession.init(configuration: .default)
+            .dataTask(with: networkRequest) { (data, response, error) in
+                
+                if let safeError = error {
+                    completionHandler(nil, ServerError(message: safeError.localizedDescription))
+                    return
+                }
+                
+                if let safeData = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let networkResponse = try decoder.decode(T.self, from: safeData)
+                        if(networkResponse.data != nil) {
+                            completionHandler(networkResponse, nil)
+                        }else if(networkResponse.status.code == NetworkConstants.STATUS_SUCCESS) {
+                            completionHandler(nil, nil)
+                        }else {
+                            completionHandler(nil, ServerError(message:networkResponse.status.message))
+                        }
+                    } catch {
+                        print(error)
+                        completionHandler(nil, ServerError(message: error.localizedDescription))
+                    }
+                }
+        }
+        
+        task.resume()
     }
 }

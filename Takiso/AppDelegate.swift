@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         
+        setenv("CFNETWORK_DIAGNOSTICS", "3", 1)
         return true
     }
 

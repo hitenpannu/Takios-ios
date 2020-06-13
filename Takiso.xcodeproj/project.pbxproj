@@ -26,6 +26,11 @@
 		986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7952492A7410085E7F4 /* AuthViewController.swift */; };
 		986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7972493EF300085E7F4 /* DesignableView.swift */; };
 		986BE79B2493FA8F0085E7F4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE79A2493FA8F0085E7F4 /* Validator.swift */; };
+		986BE79F2493FE880085E7F4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE79E2493FE880085E7F4 /* AuthViewModel.swift */; };
+		986BE7A12493FEA80085E7F4 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A02493FEA80085E7F4 /* AuthView.swift */; };
+		986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A22493FF110085E7F4 /* BaseViewModel.swift */; };
+		986BE7A5249434E30085E7F4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A4249434E30085E7F4 /* BaseView.swift */; };
+		986BE7A82494D58E0085E7F4 /* NetworkExceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7A72494D58E0085E7F4 /* NetworkExceptions.swift */; };
 		98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E5A248CD870002340FA /* NetworkClient.swift */; };
 		98C07E62248D2661002340FA /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E61248D2661002340FA /* AuthModule.swift */; };
 		A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */; };
@@ -79,6 +84,11 @@
 		986BE7952492A7410085E7F4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		986BE7972493EF300085E7F4 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		986BE79A2493FA8F0085E7F4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		986BE79E2493FE880085E7F4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		986BE7A02493FEA80085E7F4 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		986BE7A22493FF110085E7F4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		986BE7A4249434E30085E7F4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		986BE7A72494D58E0085E7F4 /* NetworkExceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExceptions.swift; sourceTree = "<group>"; };
 		98C07E5A248CD870002340FA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		98C07E61248D2661002340FA /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
 		9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakisoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +175,9 @@
 		983FCCBE248CCDAD00B9F064 /* Takiso */ = {
 			isa = PBXGroup;
 			children = (
+				986BE79C2493FA990085E7F4 /* utils */,
+				986BE7992493EF360085E7F4 /* customDesignable */,
+				986BE7A6249434E90085E7F4 /* base */,
 				98C07E5D248D25B6002340FA /* coreNetwork */,
 				98C07E5C248D2514002340FA /* featureAuth */,
 				983FCCBF248CCDAD00B9F064 /* AppDelegate.swift */,
@@ -175,8 +188,6 @@
 				983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */,
 				983FCCD0248CCDAE00B9F064 /* Info.plist */,
 				983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */,
-				986BE7992493EF360085E7F4 /* customDesignable */,
-				986BE79C2493FA990085E7F4 /* utils */,
 			);
 			path = Takiso;
 			sourceTree = "<group>";
@@ -215,6 +226,25 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		986BE79D2493FE6D0085E7F4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7952492A7410085E7F4 /* AuthViewController.swift */,
+				986BE79E2493FE880085E7F4 /* AuthViewModel.swift */,
+				986BE7A02493FEA80085E7F4 /* AuthView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		986BE7A6249434E90085E7F4 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				986BE7A22493FF110085E7F4 /* BaseViewModel.swift */,
+				986BE7A4249434E30085E7F4 /* BaseView.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		98C07E5C248D2514002340FA /* featureAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +252,7 @@
 				98C07E5F248D2628002340FA /* entity */,
 				98C07E60248D2638002340FA /* domain */,
 				98C07E61248D2661002340FA /* AuthModule.swift */,
-				986BE7952492A7410085E7F4 /* AuthViewController.swift */,
+				986BE79D2493FE6D0085E7F4 /* ui */,
 			);
 			path = featureAuth;
 			sourceTree = "<group>";
@@ -233,6 +263,7 @@
 				983FCD05248CD42600B9F064 /* NetworkConstants.swift */,
 				98C07E5A248CD870002340FA /* NetworkClient.swift */,
 				983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */,
+				986BE7A72494D58E0085E7F4 /* NetworkExceptions.swift */,
 			);
 			path = coreNetwork;
 			sourceTree = "<group>";
@@ -509,11 +540,16 @@
 				983FCD06248CD42600B9F064 /* NetworkConstants.swift in Sources */,
 				983FCCF7248CCEE300B9F064 /* UserEntity.swift in Sources */,
 				983FCCC0248CCDAD00B9F064 /* AppDelegate.swift in Sources */,
+				986BE7A5249434E30085E7F4 /* BaseView.swift in Sources */,
+				986BE79F2493FE880085E7F4 /* AuthViewModel.swift in Sources */,
+				986BE7A82494D58E0085E7F4 /* NetworkExceptions.swift in Sources */,
+				986BE7A12493FEA80085E7F4 /* AuthView.swift in Sources */,
 				983FCCFA248CD03E00B9F064 /* LocalUserRepo.swift in Sources */,
 				983FCD01248CD2EF00B9F064 /* NetworkResponse.swift in Sources */,
 				986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */,
 				983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */,
 				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
+				986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */,
 				986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */,
 				983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */,
 				983FCCF5248CCE9100B9F064 /* AuthManager.swift in Sources */,

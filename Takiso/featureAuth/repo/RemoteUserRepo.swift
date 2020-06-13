@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias OnAuthCompletion = (UserEntity?, Error?) -> Void
+typealias OnAuthCompletion = (UserEntity?, TakisoException?) -> Void
 
-struct UrlNotInitialized : Error {
-    var localizedDescription: String = "Failed to initialize URL"
+struct UrlNotInitialized : TakisoException {
+    var message: String = "Failed to initialize URL"
 }
 
 protocol RemoteUserRepo {
@@ -24,7 +24,7 @@ protocol RemoteUserRepo {
 }
 
 class RemoteUserRepoImpl: RemoteUserRepo{
-
+    
     var networkClient : NetworkClient = NetworkClientImpl()
     
     func loginUser(email: String, password: String, onCompletion : @escaping OnAuthCompletion) {
@@ -34,15 +34,16 @@ class RemoteUserRepoImpl: RemoteUserRepo{
         }
         
         let networkRequest = NetworkRequestBuilder.init(url: loginUrl)
+            .useMethod(method: .POST)
             .addBody(requestBody: LoginRequest.init(email: email, password: password))
             .build()
         
-        networkClient.makeRequest(networkRequest: networkRequest) { (data: NetworkAuthSuccessResponse?, error: Error?) in
+        networkClient.makeRequest(networkRequest: networkRequest) { (data: NetworkAuthSuccessResponse?, error: TakisoException?) in
             if let safeError = error {
                 onCompletion(nil, safeError)
                 return
             }
-            if let networkUserResponse = data {
+            if let networkUserResponse = data?.data {
                 let userEntity = UserEntity.init(
                     name: networkUserResponse.user.name,
                     email: networkUserResponse.user.email,
@@ -54,29 +55,30 @@ class RemoteUserRepoImpl: RemoteUserRepo{
     }
     
     func signupUser(name: String, email: String, password: String, onCompletion: @escaping OnAuthCompletion) {
-       guard let signupUrl = URL.init(string: NetworkConstants.BASE_URL + NetworkConstants.ENDPOINT_SIGNUP) else {
-               onCompletion(nil, UrlNotInitialized())
-               return
-           }
-           
-           let networkRequest = NetworkRequestBuilder.init(url: signupUrl)
+        guard let signupUrl = URL.init(string: NetworkConstants.BASE_URL + NetworkConstants.ENDPOINT_SIGNUP) else {
+            onCompletion(nil, UrlNotInitialized())
+            return
+        }
+        
+        let networkRequest = NetworkRequestBuilder.init(url: signupUrl)
+            .useMethod(method: .POST)
             .addBody(requestBody: SignupRequest.init(name: name, email: email, password: password))
             .build()
-           
-           networkClient.makeRequest(networkRequest: networkRequest) { (data: NetworkAuthSuccessResponse?, error: Error?) in
-               if let safeError = error {
+        
+        networkClient.makeRequest(networkRequest: networkRequest) { (data: NetworkAuthSuccessResponse?, error: TakisoException?) in
+            if let safeError = error {
                 onCompletion(nil, safeError)
-                   return
-               }
-               if let networkUserResponse = data {
-                   let userEntity = UserEntity.init(
-                       name: networkUserResponse.user.name,
-                       email: networkUserResponse.user.email,
-                       id: networkUserResponse.user._id,
-                       usertoken: networkUserResponse.token)
-                   onCompletion(userEntity, nil)
-               }
-           }
+                return
+            }
+            if let networkUserResponse = data?.data {
+                let userEntity = UserEntity.init(
+                    name: networkUserResponse.user.name,
+                    email: networkUserResponse.user.email,
+                    id: networkUserResponse.user._id,
+                    usertoken: networkUserResponse.token)
+                onCompletion(userEntity, nil)
+            }
+        }
     }
     
     func logout(userAuthToken: String, onCompletion: @escaping (Error?) -> Void) {
@@ -86,8 +88,9 @@ class RemoteUserRepoImpl: RemoteUserRepo{
         }
         
         let networkRequest = NetworkRequestBuilder.init(url: logoutUrl)
-         .addHeader(key: userAuthToken, value: "token")
-         .build()
+            .useMethod(method: .POST)
+            .addHeader(key: userAuthToken, value: "token")
+            .build()
         
         networkClient.makeRequest(networkRequest: networkRequest) { (data: NetworkAuthSuccessResponse?, error: Error?) in
             if let safeError = error {
