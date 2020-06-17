@@ -22,7 +22,7 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     }
     
     func getExerciseAt(position: Int) -> ExerciseEntity? {
-        if position < exerciseList.count { return nil }
+        if position > exerciseList.count { return nil }
         return exerciseList[position]
     }
     

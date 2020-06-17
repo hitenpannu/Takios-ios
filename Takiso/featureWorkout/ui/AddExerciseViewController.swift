@@ -18,6 +18,9 @@ class AddExerciseViewController: UIViewController {
         super.viewDidLoad()
         exerciseTableView.dataSource = self
         viewModel.attachView(view: self)
+        exerciseTableView.register(UINib.init(
+            nibName: "AddExerciseTableViewCell", bundle:nil),
+                                   forCellReuseIdentifier: AddExerciseTableViewCell.REUSABLE_IDENTIFIER)
     }
 }
 
@@ -46,8 +49,18 @@ extension AddExerciseViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseItem", for: indexPath)
-        cell.textLabel?.text = viewModel.getExerciseAt(position: indexPath.row)?.name
+        let cell : AddExerciseTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: AddExerciseTableViewCell.REUSABLE_IDENTIFIER, for: indexPath) as! AddExerciseTableViewCell
+        
+        if let exercise = viewModel.getExerciseAt(position: indexPath.row) {
+            cell.exerciseEntity = exercise
+            cell.exerciseLabel.text = exercise.name
+            cell.addExerciseButton.contentMode = .center
+            cell.addExerciseButton.imageView?.contentMode = .scaleAspectFit
+            
+            cell.bodypartsCollectionView.reloadData()
+            cell.bodypartsCollectionView.layoutSubviews()
+        }
         return cell
     }
 }
