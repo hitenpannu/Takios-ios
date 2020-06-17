@@ -15,7 +15,8 @@ class AddExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var addExerciseButton: UIButton!
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var bodypartsCollectionView: UICollectionView!
-    
+
+    private let collectionViewLayout = WrapperCollectionViewFlowLayout()
     var exerciseEntity: ExerciseEntity? = nil
     
     override func awakeFromNib() {
@@ -26,7 +27,9 @@ class AddExerciseTableViewCell: UITableViewCell {
         
         bodypartsCollectionView.dataSource = self
         bodypartsCollectionView.delegate = self
+        bodypartsCollectionView.collectionViewLayout = collectionViewLayout
     }
+
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -47,9 +50,9 @@ extension AddExerciseTableViewCell : UICollectionViewDataSource {
             cell.bodyPartLabel.text = bodyPart.name
         }
         
-        cell.layer.borderColor = UIColor(named: "charcoal")?.cgColor
-        cell.layer.borderWidth = 1.0
-        cell.layer.cornerRadius = 5.0
+        cell.layer.borderColor = UIColor(named: "charcoal")?.cgColor.copy(alpha: 0.5)
+        cell.layer.borderWidth = 0.5
+        cell.layer.cornerRadius = 4.0
         return cell
     }
 }
@@ -59,8 +62,8 @@ extension AddExerciseTableViewCell : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let labelText = exerciseEntity!.bodyParts[indexPath.row].name
-        let labelSize = labelText.size(withAttributes: [.font : UIFont.systemFont(ofSize: 12.0)])
+        let labelSize = labelText.size(withAttributes: [.font : UIFont.systemFont(ofSize: 14.0)])
         
-        return CGSize(width: labelSize.width + 30.0, height: labelSize.height + 6)
+        return CGSize(width: labelSize.width + 30.0, height: labelSize.height + 8)
     }
 }

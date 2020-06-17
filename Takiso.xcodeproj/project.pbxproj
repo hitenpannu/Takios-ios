@@ -48,6 +48,7 @@
 		987FA1F52499E23D00787EF2 /* BodyPartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FA1F32499E23D00787EF2 /* BodyPartViewCell.swift */; };
 		987FA1F62499E23D00787EF2 /* BodyPartViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 987FA1F42499E23D00787EF2 /* BodyPartViewCell.xib */; };
 		987FA1FC249A7CF300787EF2 /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FA1FB249A7CF300787EF2 /* DynamicHeightCollectionView.swift */; };
+		987FA1FE249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FA1FD249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift */; };
 		98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E5A248CD870002340FA /* NetworkClient.swift */; };
 		98C07E62248D2661002340FA /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E61248D2661002340FA /* AuthModule.swift */; };
 		A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */; };
@@ -123,6 +124,7 @@
 		987FA1F32499E23D00787EF2 /* BodyPartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartViewCell.swift; sourceTree = "<group>"; };
 		987FA1F42499E23D00787EF2 /* BodyPartViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyPartViewCell.xib; sourceTree = "<group>"; };
 		987FA1FB249A7CF300787EF2 /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		987FA1FD249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		98C07E5A248CD870002340FA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		98C07E61248D2661002340FA /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
 		9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakisoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +253,7 @@
 				986BE7972493EF300085E7F4 /* DesignableView.swift */,
 				986BE7B5249544310085E7F4 /* CardView.swift */,
 				987FA1FB249A7CF300787EF2 /* DynamicHeightCollectionView.swift */,
+				987FA1FD249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift */,
 			);
 			path = customDesignable;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				986BE7D42495786A0085E7F4 /* AddExerciseViewModel.swift in Sources */,
 				983FCCCA248CCDAD00B9F064 /* Takiso.xcdatamodeld in Sources */,
 				986BE7D2249577E20085E7F4 /* ExtentionUiViewController.swift in Sources */,
+				987FA1FE249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift in Sources */,
 				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
 				986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */,
 				986BE7B6249544310085E7F4 /* CardView.swift in Sources */,

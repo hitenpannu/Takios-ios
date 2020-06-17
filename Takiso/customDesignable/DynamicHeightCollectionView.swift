@@ -9,6 +9,7 @@
 import UIKit
 
 class DynamicHeightCollectionView: UICollectionView {
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
