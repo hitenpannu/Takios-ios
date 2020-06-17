@@ -21,6 +21,9 @@ class AddExerciseViewController: UIViewController {
         exerciseTableView.register(UINib.init(
             nibName: "AddExerciseTableViewCell", bundle:nil),
                                    forCellReuseIdentifier: AddExerciseTableViewCell.REUSABLE_IDENTIFIER)
+        
+        exerciseTableView.rowHeight = UITableView.automaticDimension
+        exerciseTableView.estimatedRowHeight = 400
     }
 }
 
@@ -55,8 +58,6 @@ extension AddExerciseViewController : UITableViewDataSource {
         if let exercise = viewModel.getExerciseAt(position: indexPath.row) {
             cell.exerciseEntity = exercise
             cell.exerciseLabel.text = exercise.name
-            cell.addExerciseButton.contentMode = .center
-            cell.addExerciseButton.imageView?.contentMode = .scaleAspectFit
             
             cell.bodypartsCollectionView.reloadData()
             cell.bodypartsCollectionView.layoutSubviews()

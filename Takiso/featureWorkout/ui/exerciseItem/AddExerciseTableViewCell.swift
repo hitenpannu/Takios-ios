@@ -9,7 +9,7 @@
 import UIKit
 
 class AddExerciseTableViewCell: UITableViewCell {
-
+    
     static let REUSABLE_IDENTIFIER = "exerciseItem"
     
     @IBOutlet weak var addExerciseButton: UIButton!
@@ -25,9 +25,9 @@ class AddExerciseTableViewCell: UITableViewCell {
         bodypartsCollectionView.register(UINib.init(nibName: "BodyPartViewCell", bundle: nil), forCellWithReuseIdentifier: BodyPartViewCell.REUSABLE_IDENTIFIER)
         
         bodypartsCollectionView.dataSource = self
-
+        bodypartsCollectionView.delegate = self
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -46,8 +46,21 @@ extension AddExerciseTableViewCell : UICollectionViewDataSource {
         if let bodyPart = exerciseEntity?.bodyParts[indexPath.row] {
             cell.bodyPartLabel.text = bodyPart.name
         }
+        
+        cell.layer.borderColor = UIColor(named: "charcoal")?.cgColor
+        cell.layer.borderWidth = 1.0
+        cell.layer.cornerRadius = 5.0
         return cell
     }
+}
+
+
+extension AddExerciseTableViewCell : UICollectionViewDelegateFlowLayout {
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let labelText = exerciseEntity!.bodyParts[indexPath.row].name
+        let labelSize = labelText.size(withAttributes: [.font : UIFont.systemFont(ofSize: 12.0)])
+        
+        return CGSize(width: labelSize.width + 30.0, height: labelSize.height + 6)
+    }
 }
