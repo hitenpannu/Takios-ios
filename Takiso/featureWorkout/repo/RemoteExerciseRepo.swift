@@ -9,14 +9,14 @@
 import Foundation
 
 protocol RemoteExerciseRepo {
-    func getAllExercises(completionCallback : @escaping ([ExerciseEntity]?, TakisoException?) -> Void)
+    func getAllExercises(completionCallback : @escaping ([Exercise]?, TakisoException?) -> Void)
 }
 
 class RemoteExerciseRepoImpl : RemoteExerciseRepo {
     
     let networkClient = NetworkClientImpl()
     
-    func getAllExercises(completionCallback: @escaping ([ExerciseEntity]?, TakisoException?) -> Void) {
+    func getAllExercises(completionCallback: @escaping ([Exercise]?, TakisoException?) -> Void) {
         guard let exerciseUrl = URL.init(string: NetworkConstants.BASE_URL + NetworkConstants.ENDPOINT_EXERCISE) else {
             completionCallback(nil, UrlNotInitialized())
             return
@@ -34,20 +34,20 @@ class RemoteExerciseRepoImpl : RemoteExerciseRepo {
             }
             
             if let networkResponse = data?.data {
-                var exercises = [ExerciseEntity]()
+                var exercises = [Exercise]()
                 
                 for networkExercise in networkResponse {
-                    var bodyParts = [BodyPartEntity]()
+                    var bodyParts = [BodyPart]()
                     for networkBodyPart in networkExercise.bodyParts {
-                        let bodyPartEntity = BodyPartEntity.init(id: networkBodyPart._id, name: networkBodyPart.name)
+                        let bodyPartEntity = BodyPart.init(id: networkBodyPart._id, name: networkBodyPart.name)
                         bodyParts.append(bodyPartEntity)
                     }
-                    var equipments = [EquipmentEntity]()
+                    var equipments = [Equipment]()
                     for networkEquipment in networkExercise.equipments {
-                        let equipment = EquipmentEntity.init(id: networkEquipment._id, name: networkEquipment.name)
+                        let equipment = Equipment.init(id: networkEquipment._id, name: networkEquipment.name)
                         equipments.append(equipment)
                     }
-                    let exercise = ExerciseEntity.init(id: networkExercise._id, name: networkExercise.name, bodyParts: bodyParts, equipments: equipments)
+                    let exercise = Exercise.init(id: networkExercise._id, name: networkExercise.name, bodyParts: bodyParts, equipments: equipments)
                     exercises.append(exercise)
                 }
                 

@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18F203" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BodyPartEntity" representedClassName="BodyPartEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="EquipmentEntity" representedClassName="EquipmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ExerciseBodyPartEntity" representedClassName="ExerciseBodyPartEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="bodyPartId" optional="YES" attributeType="String"/>
+        <attribute name="exerciseId" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ExerciseEntity" representedClassName="ExerciseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ExerciseEquipmentEntity" representedClassName="ExerciseEquipmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="equipmentId" optional="YES" attributeType="String"/>
+        <attribute name="exerciseId" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="ExerciseEntity" positionX="-106.82421875" positionY="-181.37109375" width="128" height="73"/>
+        <element name="EquipmentEntity" positionX="219.2109375" positionY="-62.04296875" width="128" height="73"/>
+        <element name="BodyPartEntity" positionX="209.50390625" positionY="-203.87109375" width="128" height="73"/>
+        <element name="ExerciseBodyPartEntity" positionX="81" positionY="-90" width="128" height="73"/>
+        <element name="ExerciseEquipmentEntity" positionX="90" positionY="-81" width="128" height="73"/>
+    </elements>
 </model>

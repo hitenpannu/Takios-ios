@@ -11,7 +11,7 @@ import Foundation
 class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     
     private let workoutManager : WorkoutManager = WorkoutManagerImpl()
-    private var exerciseList = [ExerciseEntity]()
+    private var exerciseList = [Exercise]()
     
     override func onViewAttached() {
         loadAllExercises()
@@ -21,7 +21,7 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
         return exerciseList.count
     }
     
-    func getExerciseAt(position: Int) -> ExerciseEntity? {
+    func getExerciseAt(position: Int) -> Exercise? {
         if position > exerciseList.count { return nil }
         return exerciseList[position]
     }

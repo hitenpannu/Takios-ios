@@ -22,6 +22,7 @@
 		983FCD01248CD2EF00B9F064 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */; };
 		983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD03248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift */; };
 		983FCD06248CD42600B9F064 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FCD05248CD42600B9F064 /* NetworkConstants.swift */; };
+		9868656C24A085EC00D46E1A /* LocalExerciseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9868656B24A085EC00D46E1A /* LocalExerciseRepo.swift */; };
 		986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7952492A7410085E7F4 /* AuthViewController.swift */; };
 		986BE7982493EF300085E7F4 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE7972493EF300085E7F4 /* DesignableView.swift */; };
 		986BE79B2493FA8F0085E7F4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BE79A2493FA8F0085E7F4 /* Validator.swift */; };
@@ -98,6 +99,7 @@
 		983FCD00248CD2EF00B9F064 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		983FCD03248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAuthSuccessResponse.swift; sourceTree = "<group>"; };
 		983FCD05248CD42600B9F064 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		9868656B24A085EC00D46E1A /* LocalExerciseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalExerciseRepo.swift; sourceTree = "<group>"; };
 		986BE7952492A7410085E7F4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		986BE7972493EF300085E7F4 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		986BE79A2493FA8F0085E7F4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			children = (
 				986BE7C92495712B0085E7F4 /* RemoteExerciseRepo.swift */,
 				986BE7CE249572E30085E7F4 /* entity */,
+				9868656B24A085EC00D46E1A /* LocalExerciseRepo.swift */,
 			);
 			path = repo;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */,
 				986BE7B6249544310085E7F4 /* CardView.swift in Sources */,
 				986BE7C724956F710085E7F4 /* WorkoutEntity.swift in Sources */,
+				9868656C24A085EC00D46E1A /* LocalExerciseRepo.swift in Sources */,
 				987FA1F52499E23D00787EF2 /* BodyPartViewCell.swift in Sources */,
 				986BE7962492A7410085E7F4 /* AuthViewController.swift in Sources */,
 				983FCD04248CD3BA00B9F064 /* NetworkAuthSuccessResponse.swift in Sources */,

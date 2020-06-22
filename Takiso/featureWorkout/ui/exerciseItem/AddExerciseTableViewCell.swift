@@ -17,7 +17,7 @@ class AddExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var bodypartsCollectionView: UICollectionView!
 
     private let collectionViewLayout = WrapperCollectionViewFlowLayout()
-    var exerciseEntity: ExerciseEntity? = nil
+    var exerciseEntity: Exercise? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()

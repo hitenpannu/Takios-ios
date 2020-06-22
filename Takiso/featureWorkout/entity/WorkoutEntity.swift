@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct BodyPartEntity : Decodable {
+struct BodyPart : Decodable {
     let id: String
     let name: String
 }
 
-struct EquipmentEntity : Decodable {
+struct Equipment : Decodable {
     let id: String
     let name: String
 }
 
-struct ExerciseEntity : Decodable {
+struct Exercise : Decodable {
     let id: String
     let name: String
-    let bodyParts: [BodyPartEntity]
-    let equipments: [EquipmentEntity]
+    let bodyParts: [BodyPart]
+    let equipments: [Equipment]
 }
