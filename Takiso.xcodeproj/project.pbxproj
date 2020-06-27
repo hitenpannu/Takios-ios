@@ -52,6 +52,8 @@
 		987FA1FE249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FA1FD249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift */; };
 		98C07E5B248CD870002340FA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E5A248CD870002340FA /* NetworkClient.swift */; };
 		98C07E62248D2661002340FA /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C07E61248D2661002340FA /* AuthModule.swift */; };
+		98D0D02524A5E82100C52380 /* BodyPartsLocalRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0D02424A5E82100C52380 /* BodyPartsLocalRepo.swift */; };
+		98D0D02724A5F72E00C52380 /* EquipmentsLocalRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0D02624A5F72E00C52380 /* EquipmentsLocalRepo.swift */; };
 		A60258611368CDD354E15FFB /* Pods_TakisoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */; };
 		BDBC8147AA6577894E0B419C /* Pods_Takiso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F7FCD3041354C76B4CC02B /* Pods_Takiso.framework */; };
 		D8FF081D8E91B70EC293FEB5 /* Pods_Takiso_TakisoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FD77020D2763FF82FBD8F2 /* Pods_Takiso_TakisoUITests.framework */; };
@@ -129,6 +131,8 @@
 		987FA1FD249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		98C07E5A248CD870002340FA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		98C07E61248D2661002340FA /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
+		98D0D02424A5E82100C52380 /* BodyPartsLocalRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartsLocalRepo.swift; sourceTree = "<group>"; };
+		98D0D02624A5F72E00C52380 /* EquipmentsLocalRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentsLocalRepo.swift; sourceTree = "<group>"; };
 		9B5EEE26B26F23FF43784344 /* Pods_TakisoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakisoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CB905F9A904456A33B0A22 /* Pods-TakisoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakisoTests.debug.xcconfig"; path = "Target Support Files/Pods-TakisoTests/Pods-TakisoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C49E0D829EAA726E9777D8E0 /* Pods-Takiso-TakisoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takiso-TakisoUITests.release.xcconfig"; path = "Target Support Files/Pods-Takiso-TakisoUITests/Pods-Takiso-TakisoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,12 +224,12 @@
 				98C07E5D248D25B6002340FA /* coreNetwork */,
 				98C07E5C248D2514002340FA /* featureAuth */,
 				986BE7AC24953CDE0085E7F4 /* featureDashboard */,
+				986BE7C024956EEF0085E7F4 /* featureWorkout */,
 				983FCCC5248CCDAD00B9F064 /* Main.storyboard */,
 				983FCCCB248CCDAE00B9F064 /* Assets.xcassets */,
 				983FCCCD248CCDAE00B9F064 /* LaunchScreen.storyboard */,
 				983FCCD0248CCDAE00B9F064 /* Info.plist */,
 				983FCCC8248CCDAD00B9F064 /* Takiso.xcdatamodeld */,
-				986BE7C024956EEF0085E7F4 /* featureWorkout */,
 				986BE7D1249577E20085E7F4 /* ExtentionUiViewController.swift */,
 			);
 			path = Takiso;
@@ -374,7 +378,7 @@
 			children = (
 				986BE7C92495712B0085E7F4 /* RemoteExerciseRepo.swift */,
 				986BE7CE249572E30085E7F4 /* entity */,
-				9868656B24A085EC00D46E1A /* LocalExerciseRepo.swift */,
+				98D0D02324A5E7F000C52380 /* local */,
 			);
 			path = repo;
 			sourceTree = "<group>";
@@ -445,6 +449,16 @@
 				983FCCF4248CCE9100B9F064 /* AuthManager.swift */,
 			);
 			path = domain;
+			sourceTree = "<group>";
+		};
+		98D0D02324A5E7F000C52380 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				9868656B24A085EC00D46E1A /* LocalExerciseRepo.swift */,
+				98D0D02424A5E82100C52380 /* BodyPartsLocalRepo.swift */,
+				98D0D02624A5F72E00C52380 /* EquipmentsLocalRepo.swift */,
+			);
+			path = local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -704,6 +718,7 @@
 				986BE7C424956F280085E7F4 /* WorkoutManager.swift in Sources */,
 				986BE7CD249572DF0085E7F4 /* NetworkEntity.swift in Sources */,
 				986BE7A82494D58E0085E7F4 /* NetworkExceptions.swift in Sources */,
+				98D0D02724A5F72E00C52380 /* EquipmentsLocalRepo.swift in Sources */,
 				986BE7B124953F350085E7F4 /* DashboardHeaderViewController.swift in Sources */,
 				986BE7A12493FEA80085E7F4 /* AuthView.swift in Sources */,
 				983FCCFA248CD03E00B9F064 /* LocalUserRepo.swift in Sources */,
@@ -714,6 +729,7 @@
 				986BE7D2249577E20085E7F4 /* ExtentionUiViewController.swift in Sources */,
 				987FA1FE249A8E2300787EF2 /* WrapperCollectionViewFlowLayout.swift in Sources */,
 				983FCCC2248CCDAD00B9F064 /* SceneDelegate.swift in Sources */,
+				98D0D02524A5E82100C52380 /* BodyPartsLocalRepo.swift in Sources */,
 				986BE7A32493FF110085E7F4 /* BaseViewModel.swift in Sources */,
 				986BE7B6249544310085E7F4 /* CardView.swift in Sources */,
 				986BE7C724956F710085E7F4 /* WorkoutEntity.swift in Sources */,

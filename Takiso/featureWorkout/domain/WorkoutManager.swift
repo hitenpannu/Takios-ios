@@ -10,8 +10,6 @@ import Foundation
 
 protocol WorkoutManager {
     func getAllExercises(forcedFresh: Bool, completionCallback : @escaping ([Exercise]?, TakisoException?) -> Void)
-    func getAllEquipments(completionCallback :  @escaping ([Equipment]?, TakisoException?) -> Void)
-    func getAllBodyParts(completionCallback: @escaping  ([BodyPart]?, TakisoException?) -> Void)
 }
 
 class WorkoutManagerImpl: WorkoutManager {
@@ -52,7 +50,7 @@ class WorkoutManagerImpl: WorkoutManager {
     }
     
     private func getFromLocal(_ completionCallback: @escaping ([Exercise]?, TakisoException?)-> Void) {
-        let exercise = localExerciseRepo.getExercise(bodyParts: [], equipments: [])
+        let exercise = localExerciseRepo.getExercises()
         if !exercise.isEmpty {
             completionCallback(exercise, nil)
             return
@@ -67,18 +65,8 @@ class WorkoutManagerImpl: WorkoutManager {
              self.localExerciseRepo.saveExerciseList(exerciseList: safeExerciseList)
             }
             
-            let updated = self.localExerciseRepo.getExercise(bodyParts: [], equipments: [])
+            let updated = self.localExerciseRepo.getExercises()
             completionCallback(updated, nil)
         }
-    }
-    
-    func getAllEquipments(completionCallback: @escaping  ([Equipment]?, TakisoException?) -> Void) {
-        let equipments = localExerciseRepo.getAllEquipments(ids: [])
-        completionCallback(equipments, nil)
-    }
-    
-    func getAllBodyParts(completionCallback:  @escaping ([BodyPart]?, TakisoException?) -> Void) {
-        let bodyParts = localExerciseRepo.getAllBodyParts(ids: [])
-        completionCallback(bodyParts, nil)
     }
 }

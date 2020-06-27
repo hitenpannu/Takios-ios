@@ -62,7 +62,7 @@ extension AddExerciseTableViewCell : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let labelText = exerciseEntity!.bodyParts[indexPath.row].name
-        let labelSize = labelText.size(withAttributes: [.font : UIFont.systemFont(ofSize: 14.0)])
+        let labelSize = labelText.size(withAttributes: [.font : UIFont.systemFont(ofSize: 10.0)])
         
         return CGSize(width: labelSize.width + 30.0, height: labelSize.height + 8)
     }

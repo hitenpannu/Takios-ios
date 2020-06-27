@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct BodyPart : Decodable {
+struct BodyPart : Decodable, Hashable {
     let id: String
     let name: String
 }
 
-struct Equipment : Decodable {
+struct Equipment : Decodable, Hashable {
     let id: String
     let name: String
 }
 
-struct Exercise : Decodable {
+struct Exercise : Decodable, Hashable {
     let id: String
     let name: String
     let bodyParts: [BodyPart]

@@ -14,7 +14,7 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     private var exerciseList = [Exercise]()
     
     override func onViewAttached() {
-        loadAllExercises()
+        loadAllExercises(forcedFresh: false)
     }
     
     func getExerciseCount() -> Int {
@@ -26,8 +26,8 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
         return exerciseList[position]
     }
     
-    func loadAllExercises() {
-        workoutManager.getAllExercises { (exerciseList, exception) in
+    @objc func loadAllExercises(forcedFresh: Bool) {
+        workoutManager.getAllExercises(forcedFresh: forcedFresh) { (exerciseList, exception) in
             if let safeError = exception {
                 self.attachedView?.showErrorMessage(message: safeError.message)
                 return

@@ -14,16 +14,39 @@ class AddExerciseViewController: UIViewController {
     
     private let viewModel = AddExerciseViewModel()
     
+    private lazy var refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl.init()
+        refreshControl.addTarget(
+            self,
+            action: #selector(AddExerciseViewController.handleRefresh(_:)),
+            for: .valueChanged)
+        return refreshControl
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         exerciseTableView.dataSource = self
         viewModel.attachView(view: self)
+        
+        // Register the view cell for the table view
         exerciseTableView.register(UINib.init(
             nibName: "AddExerciseTableViewCell", bundle:nil),
                                    forCellReuseIdentifier: AddExerciseTableViewCell.REUSABLE_IDENTIFIER)
         
+        // Make dynamic height for each table row
         exerciseTableView.rowHeight = UITableView.automaticDimension
         exerciseTableView.estimatedRowHeight = 400
+        
+        // Attach the swipe to refresh view
+        exerciseTableView.addSubview(refreshControl)
+    }
+    
+    @objc func handleRefresh(_ sender : UIRefreshControl){
+        viewModel.loadAllExercises(forcedFresh: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.detachView()
     }
 }
 
@@ -32,6 +55,9 @@ class AddExerciseViewController: UIViewController {
 extension AddExerciseViewController : AddExerciseView {
     func refreshExerciseList() {
         DispatchQueue.main.async {
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
             self.exerciseTableView.reloadData()
         }
     }
