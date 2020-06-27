@@ -10,7 +10,7 @@ import Foundation
 
 class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     
-    private let workoutManager : WorkoutManager = WorkoutManagerImpl()
+    private let workoutManager : WorkoutManager = WorkoutManagerImpl.getInstance()
     private var exerciseList = [Exercise]()
     
     override func onViewAttached() {

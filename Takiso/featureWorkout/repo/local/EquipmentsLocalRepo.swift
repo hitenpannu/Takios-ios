@@ -64,7 +64,7 @@ class EquipmentsLocalRepo {
             }
             
             try dbContext!.save()
-        
+            
         } catch {
             print(error)
         }
@@ -76,6 +76,18 @@ class EquipmentsLocalRepo {
         let bodyPartEntites = getEquipments(bodyPartIds)
         return bodyPartEntites.map { (entity) -> Equipment in
             Equipment.init(id: entity.id!, name: entity.name!)
+        }
+    }
+    
+    func getAllEquipments() -> [Equipment] {
+        let request : NSFetchRequest<EquipmentEntity> = EquipmentEntity.fetchRequest()
+        do {
+            return try dbContext!.fetch(request).map({ (entity) -> Equipment in
+                return Equipment.init(id: entity.id!, name: entity.name!)
+            })
+        } catch {
+            print(error)
+            return []
         }
     }
 }
@@ -94,7 +106,7 @@ extension EquipmentsLocalRepo {
     
     private func getEquipmentsIdsLinkedWith(_ exerciseId: String) -> [String] {
         let request : NSFetchRequest<ExerciseEquipmentEntity> = ExerciseEquipmentEntity.fetchRequest()
-    
+        
         request.predicate = NSPredicate(format: "exerciseId == %@", exerciseId)
         
         do {

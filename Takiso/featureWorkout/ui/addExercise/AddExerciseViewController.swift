@@ -44,6 +44,10 @@ class AddExerciseViewController: UIViewController {
     @objc func handleRefresh(_ sender : UIRefreshControl){
         viewModel.loadAllExercises(forcedFresh: true)
     }
+    
+    @IBAction func onFilterIconClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToFilterScreen", sender: self)
+    }
 }
 
 //MARK: - Handle AddExerciseView callback

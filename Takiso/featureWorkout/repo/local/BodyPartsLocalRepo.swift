@@ -64,7 +64,7 @@ class BodyPartsLocalRepo {
             }
             
             try dbContext!.save()
-        
+            
         } catch {
             print(error)
         }
@@ -76,6 +76,18 @@ class BodyPartsLocalRepo {
         let bodyPartEntites = getBodyParts(bodyPartIds)
         return bodyPartEntites.map { (entity) -> BodyPart in
             BodyPart.init(id: entity.id!, name: entity.name!)
+        }
+    }
+    
+    func getAllBodyParts() -> [BodyPart] {
+        let request : NSFetchRequest<BodyPartEntity> = BodyPartEntity.fetchRequest()
+        do {
+            return try dbContext!.fetch(request).map({ (entity) -> BodyPart in
+                BodyPart.init(id: entity.id!, name: entity.name!)
+            })
+        } catch {
+            print(error)
+            return []
         }
     }
 }
@@ -94,7 +106,7 @@ extension BodyPartsLocalRepo {
     
     private func getBodyPartIdsLinkedWith(_ exerciseId: String) -> [String] {
         let request : NSFetchRequest<ExerciseBodyPartEntity> = ExerciseBodyPartEntity.fetchRequest()
-    
+        
         request.predicate = NSPredicate(format: "exerciseId == %@", exerciseId)
         
         do {

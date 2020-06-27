@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -559,14 +560,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="25"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.horizontal.3.decrease" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FPk-Nf-kiq">
-                                                                <rect key="frame" x="338" y="4" width="60" height="17"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ax-9v-AwB">
+                                                                <rect key="frame" x="338" y="0.0" width="60" height="25"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="7Av-Ol-RyP"/>
-                                                                    <constraint firstAttribute="width" constant="60" id="jUg-E4-OTV"/>
-                                                                </constraints>
-                                                            </imageView>
+                                                                <state key="normal" image="line.horizontal.3.decrease" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="onFilterIconClicked:" destination="e7z-41-61k" eventType="touchUpInside" id="Cdg-wP-0ep"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -614,11 +615,137 @@
                     </navigationItem>
                     <connections>
                         <outlet property="exerciseTableView" destination="rHk-Vn-dBP" id="Hir-r5-hHO"/>
+                        <segue destination="EBk-5c-G6S" kind="presentation" identifier="goToFilterScreen" id="Hf4-lR-txR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5J-KM-yFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3579.7101449275365" y="898.66071428571422"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="3c0-On-PDS">
+            <objects>
+                <viewController id="EBk-5c-G6S" customClass="FilterViewController" customModule="Takiso" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8SZ-4x-FRw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="siU-Hx-GYl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gld-qm-sjU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pbn-lg-qF9">
+                                                <rect key="frame" x="8" y="8" width="398" height="30.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Parts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQD-Jc-Vo7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="charcoal"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o0d-J9-OJB" customClass="DynamicHeightCollectionView" customModule="Takiso" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30.5" width="398" height="0.0"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6zg-3L-UEF">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="998-tX-HjM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="T2u-cr-Tg1">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </collectionViewCellContentView>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-RM-khr">
+                                                <rect key="frame" x="8" y="58.5" width="398" height="30.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P3R-dr-YLP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <edgeInsets key="layoutMargins" top="20" left="8" bottom="8" right="8"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="charcoal"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-yR-cdr" customClass="DynamicHeightCollectionView" customModule="Takiso" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30.5" width="398" height="0.0"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vrw-hs-Xrb">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uL6-nv-s8f">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="d5C-Qt-qfd">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </collectionViewCellContentView>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" id="xla-gA-o9R">
+                                                <rect key="frame" x="8" y="109" width="398" height="641"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGO-4h-lm5">
+                                                <rect key="frame" x="8" y="770" width="398" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Apply"/>
+                                                <connections>
+                                                    <action selector="applyFilterButtonClickHandler:" destination="EBk-5c-G6S" eventType="touchUpInside" id="vAN-BC-BSF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="maizeCrayola"/>
+                                <constraints>
+                                    <constraint firstItem="Cl0-Yf-Zjx" firstAttribute="bottom" secondItem="gld-qm-sjU" secondAttribute="bottom" id="Gmh-TX-7rh"/>
+                                    <constraint firstItem="gld-qm-sjU" firstAttribute="leading" secondItem="Cl0-Yf-Zjx" secondAttribute="leading" id="JhK-ul-h3n"/>
+                                    <constraint firstItem="Cl0-Yf-Zjx" firstAttribute="trailing" secondItem="gld-qm-sjU" secondAttribute="trailing" id="Tn9-pd-3bL"/>
+                                    <constraint firstItem="gld-qm-sjU" firstAttribute="top" secondItem="Cl0-Yf-Zjx" secondAttribute="top" id="dZr-HA-wgF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Fqe-00-v3B"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Cl0-Yf-Zjx"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uVb-84-Ksk" firstAttribute="bottom" secondItem="siU-Hx-GYl" secondAttribute="bottom" id="1um-xJ-wud"/>
+                            <constraint firstItem="uVb-84-Ksk" firstAttribute="trailing" secondItem="siU-Hx-GYl" secondAttribute="trailing" id="5lc-PF-s61"/>
+                            <constraint firstItem="siU-Hx-GYl" firstAttribute="top" secondItem="uVb-84-Ksk" secondAttribute="top" id="PcZ-7S-Du1"/>
+                            <constraint firstItem="siU-Hx-GYl" firstAttribute="leading" secondItem="uVb-84-Ksk" secondAttribute="leading" id="Qc5-iJ-q77"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uVb-84-Ksk"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodyPartsCollectionView" destination="o0d-J9-OJB" id="gdC-M6-BjF"/>
+                        <outlet property="equipmentsCollectionView" destination="pIj-yR-cdr" id="4vy-wV-WYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qP1-7R-kkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4427.536231884058" y="898.66071428571422"/>
         </scene>
     </scenes>
     <resources>

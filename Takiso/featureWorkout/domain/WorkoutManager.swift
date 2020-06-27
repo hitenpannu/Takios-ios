@@ -8,18 +8,80 @@
 
 import Foundation
 
+struct Filters {
+    var bodyParts: [BodyPart]
+    var equipments: [Equipment]
+}
+
+protocol WorkoutManagerDelegate {
+    func updateExerciseList(newExerciseList: [Exercise])
+}
+
 protocol WorkoutManager {
+    
+    func attachDelegate(delegate: WorkoutManagerDelegate)
+    
     func getAllExercises(forcedFresh: Bool, completionCallback : @escaping ([Exercise]?, TakisoException?) -> Void)
+    
+    func getAllBodyParts(completionCallback : @escaping ([BodyPart]?, TakisoException?) -> Void)
+    
+    func getAllEquipments(completionCallback : @escaping ([Equipment]?, TakisoException?) -> Void)
+    
+    func applyFilters(bodyParts: [BodyPart], equipments : [Equipment])
+    
+    func getCurrentFilters() -> Filters?
 }
 
 class WorkoutManagerImpl: WorkoutManager {
+
+    private static var instance : WorkoutManagerImpl? = nil
+    
+    static func getInstance() -> WorkoutManager {
+        if instance == nil {
+            instance = WorkoutManagerImpl.init()
+        }
+        return instance!
+    }
     
     private let remoteExerciseRepo: RemoteExerciseRepo
     private let localExerciseRepo : LocalExerciseRepo
+    private var workoutManagerDelegate: WorkoutManagerDelegate? = nil
+    private var filters : Filters? = nil {
+        didSet {
+            updateExerciseList()
+        }
+    }
     
     init(localExerciseRepo : LocalExerciseRepo = LocalExerciseRepoImpl(), remoteExerciseRepo: RemoteExerciseRepo = RemoteExerciseRepoImpl()) {
         self.localExerciseRepo = localExerciseRepo
         self.remoteExerciseRepo = remoteExerciseRepo
+    }
+    
+    func attachDelegate(delegate: WorkoutManagerDelegate) {
+        self.workoutManagerDelegate = delegate
+    }
+    
+    func getCurrentFilters() -> Filters? {
+        return filters
+    }
+    
+    func getAllBodyParts(completionCallback : @escaping ([BodyPart]?, TakisoException?) -> Void) {
+        let bodyParts = localExerciseRepo.getAllBodyParts()
+        completionCallback(bodyParts, nil)
+    }
+    
+    func getAllEquipments(completionCallback : @escaping ([Equipment]?, TakisoException?) -> Void) {
+        let equipments = localExerciseRepo.getAllEquipments()
+        completionCallback(equipments, nil)
+    }
+    
+    func applyFilters(bodyParts: [BodyPart], equipments: [Equipment]) {
+        self.filters = Filters.init(bodyParts: bodyParts, equipments: equipments)
+    }
+    
+    func updateExerciseList() {
+        // Fetch the exercise list with the filters and call the delegate
+        print("Requesting new Exercise List")
     }
     
     func getAllExercises(forcedFresh: Bool, completionCallback:  @escaping ([Exercise]?, TakisoException?) -> Void) {

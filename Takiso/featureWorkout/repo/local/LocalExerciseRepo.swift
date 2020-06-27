@@ -13,6 +13,10 @@ protocol LocalExerciseRepo {
     
     func saveExerciseList(exerciseList: [Exercise])
     
+    func getAllBodyParts() -> [BodyPart]
+    
+    func getAllEquipments() -> [Equipment]
+    
     func getExercises() -> [Exercise]
 }
 
@@ -24,6 +28,14 @@ class LocalExerciseRepoImpl : LocalExerciseRepo {
     private lazy var dbContext = {
         return (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }()
+    
+    func getAllBodyParts() -> [BodyPart] {
+        return bodyPartsRepo.getAllBodyParts()
+    }
+    
+    func getAllEquipments() -> [Equipment] {
+        return equipmentsRepo.getAllEquipments()
+    }
     
     func saveExerciseList(exerciseList: [Exercise]) {
         var exerciseToBodyPartsMapping = [String: [String]]()
