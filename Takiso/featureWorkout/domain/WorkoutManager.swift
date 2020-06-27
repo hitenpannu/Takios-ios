@@ -29,7 +29,7 @@ class WorkoutManagerImpl: WorkoutManager {
                     completionCallback(nil, safeError)
                     return
                 }
-                self.getFromLocal(completionCallback)
+                completionCallback(exerciseList, nil)
             }
         }else {
             self.getFromLocal(completionCallback)
@@ -46,6 +46,7 @@ class WorkoutManagerImpl: WorkoutManager {
             if let safeExerciseList = exerciseList {
              self.localExerciseRepo.saveExerciseList(exerciseList: safeExerciseList)
             }
+            completionCallback(exerciseList, nil)
         }
     }
     

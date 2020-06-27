@@ -44,10 +44,6 @@ class AddExerciseViewController: UIViewController {
     @objc func handleRefresh(_ sender : UIRefreshControl){
         viewModel.loadAllExercises(forcedFresh: true)
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        viewModel.detachView()
-    }
 }
 
 //MARK: - Handle AddExerciseView callback
@@ -55,9 +51,7 @@ class AddExerciseViewController: UIViewController {
 extension AddExerciseViewController : AddExerciseView {
     func refreshExerciseList() {
         DispatchQueue.main.async {
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
-            }
+            self.refreshControl.endRefreshing()
             self.exerciseTableView.reloadData()
         }
     }
