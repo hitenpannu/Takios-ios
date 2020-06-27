@@ -12,6 +12,7 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     
     private let workoutManager : WorkoutManager = WorkoutManagerImpl.getInstance()
     private var exerciseList = [Exercise]()
+    private var indexesOfSelectedExercises = Set<Int>()
     
     override func onViewAttached() {
         workoutManager.attachDelegate(delegate: self)
@@ -37,6 +38,18 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
         } else {
           return 0
         }
+    }
+    
+    func toggleSelection(index: Int) {
+        if indexesOfSelectedExercises.contains(index) {
+            indexesOfSelectedExercises.remove(index)
+        } else {
+            indexesOfSelectedExercises.insert(index)
+        }
+    }
+    
+    func isSelected(index: Int) -> Bool {
+        return indexesOfSelectedExercises.contains(index)
     }
 }
 

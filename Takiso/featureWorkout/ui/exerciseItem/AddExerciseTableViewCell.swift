@@ -15,9 +15,10 @@ class AddExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var addExerciseButton: UIButton!
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var bodypartsCollectionView: UICollectionView!
-
+    
     private let collectionViewLayout = WrapperCollectionViewFlowLayout()
     var exerciseEntity: Exercise? = nil
+    var addButtonClickFunction : (()-> Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,9 @@ class AddExerciseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func addButtonClickHandler(_ sender: UIButton) {
+        addButtonClickFunction?()
+    }
 }
 
 extension AddExerciseTableViewCell : UICollectionViewDataSource {

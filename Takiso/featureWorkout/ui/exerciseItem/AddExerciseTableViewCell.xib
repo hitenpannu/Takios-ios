@@ -65,6 +65,9 @@
                                         <state key="normal" image="plus.circle" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addButtonClickHandler:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MZO-hT-X4B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

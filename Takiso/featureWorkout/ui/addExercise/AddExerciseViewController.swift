@@ -85,7 +85,17 @@ extension AddExerciseViewController : UITableViewDataSource {
         if let exercise = viewModel.getExerciseAt(position: indexPath.row) {
             cell.exerciseEntity = exercise
             cell.exerciseLabel.text = exercise.name
-            
+            var image : UIImage?
+             if viewModel.isSelected(index: indexPath.row) {
+                image = UIImage.init(systemName: "checkmark.circle.fill")
+             } else {
+                image = UIImage.init(systemName: "plus.circle")
+            }
+            cell.addExerciseButton.setImage(image, for: .normal)
+            cell.addButtonClickFunction = {
+                self.viewModel.toggleSelection(index: indexPath.row)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
             cell.bodypartsCollectionView.reloadData()
             cell.bodypartsCollectionView.layoutSubviews()
         }
