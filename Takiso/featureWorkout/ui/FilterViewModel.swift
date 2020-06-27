@@ -80,4 +80,8 @@ class FilterViewModel: BaseViewModel<FilterView> {
             }
         }
     }
+    
+    func applyFilters() {
+        workoutManager.applyFilters(bodyParts: selectedBodyParts, equipments: selectedEquipments)
+    }
 }

@@ -90,6 +90,18 @@ class EquipmentsLocalRepo {
             return []
         }
     }
+    
+    func getExerciseIds(equipments: [Equipment]) -> [String] {
+        let ids = equipments.map { (equipment) -> String in equipment.id }
+        do {
+            let request : NSFetchRequest<ExerciseEquipmentEntity> = ExerciseEquipmentEntity.fetchRequest()
+            request.predicate = NSPredicate.init(format: "equipmentId IN %@", ids)
+            return try dbContext!.fetch(request).map({ (entity) -> String in entity.exerciseId! })
+        } catch {
+            print(error)
+            return []
+        }
+    }
 }
 
 extension EquipmentsLocalRepo {
@@ -117,6 +129,7 @@ extension EquipmentsLocalRepo {
             return []
         }
     }
+    
 }
 
 extension EquipmentsLocalRepo {

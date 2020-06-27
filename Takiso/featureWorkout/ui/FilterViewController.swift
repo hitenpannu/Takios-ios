@@ -40,7 +40,8 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func applyFilterButtonClickHandler(_ sender: UIButton) {
-        
+        viewModel.applyFilters()
+        dismiss(animated: true, completion: nil)
     }
 }
 

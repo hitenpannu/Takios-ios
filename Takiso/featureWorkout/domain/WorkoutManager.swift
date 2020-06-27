@@ -21,7 +21,7 @@ protocol WorkoutManager {
     
     func attachDelegate(delegate: WorkoutManagerDelegate)
     
-    func getAllExercises(forcedFresh: Bool, completionCallback : @escaping ([Exercise]?, TakisoException?) -> Void)
+    func getAllExercises(forcedFresh: Bool)
     
     func getAllBodyParts(completionCallback : @escaping ([BodyPart]?, TakisoException?) -> Void)
     
@@ -81,55 +81,55 @@ class WorkoutManagerImpl: WorkoutManager {
     
     func updateExerciseList() {
         // Fetch the exercise list with the filters and call the delegate
-        print("Requesting new Exercise List")
+        if let safeFilters = filters {
+            let filteredList = localExerciseRepo.getExercises(bodyParts: safeFilters.bodyParts, equipments: safeFilters.equipments)
+            self.workoutManagerDelegate?.updateExerciseList(newExerciseList: filteredList)
+        } else {
+            let allExercises = self.localExerciseRepo.getExercises()
+            if allExercises.isEmpty {
+                // need to fetch from remote as db is empty
+                getFromRemote {
+                    self.workoutManagerDelegate?.updateExerciseList(newExerciseList: self.localExerciseRepo.getExercises())
+                }
+            } else {
+                self.workoutManagerDelegate?.updateExerciseList(newExerciseList: allExercises)
+            }
+        }
     }
     
-    func getAllExercises(forcedFresh: Bool, completionCallback:  @escaping ([Exercise]?, TakisoException?) -> Void) {
+    func getAllExercises(forcedFresh: Bool) {
         if forcedFresh {
-            self.updateLocalRepo { (exerciseList, error) in
-                if let safeError = error {
-                    completionCallback(nil, safeError)
-                    return
-                }
-                completionCallback(exerciseList, nil)
-            }
-        }else {
-            self.getFromLocal(completionCallback)
+            self.updateLocalRepo()
+        } else {
+          updateExerciseList()
         }
     }
         
-    private func updateLocalRepo(_ completionCallback: @escaping ([Exercise]?, TakisoException?)-> Void) {
+    private func updateLocalRepo() {
         remoteExerciseRepo.getAllExercises { (exerciseList, exception) in
             if let safeError = exception {
-                completionCallback(nil, safeError)
+                print(safeError)
                 return
             }
             
             if let safeExerciseList = exerciseList {
              self.localExerciseRepo.saveExerciseList(exerciseList: safeExerciseList)
             }
-            completionCallback(exerciseList, nil)
+            self.updateExerciseList()
         }
     }
     
-    private func getFromLocal(_ completionCallback: @escaping ([Exercise]?, TakisoException?)-> Void) {
-        let exercise = localExerciseRepo.getExercises()
-        if !exercise.isEmpty {
-            completionCallback(exercise, nil)
-            return
-        }
+    private func getFromRemote(_ completionCallback: @escaping () -> Void) {
         remoteExerciseRepo.getAllExercises { (exerciseList, exception) in
             if let safeError = exception {
-                completionCallback(nil, safeError)
+                print(safeError)
                 return
             }
             
             if let safeExerciseList = exerciseList {
              self.localExerciseRepo.saveExerciseList(exerciseList: safeExerciseList)
             }
-            
-            let updated = self.localExerciseRepo.getExercises()
-            completionCallback(updated, nil)
+            completionCallback()
         }
     }
 }

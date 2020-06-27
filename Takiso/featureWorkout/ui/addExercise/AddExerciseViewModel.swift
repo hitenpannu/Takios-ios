@@ -14,6 +14,7 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     private var exerciseList = [Exercise]()
     
     override func onViewAttached() {
+        workoutManager.attachDelegate(delegate: self)
         loadAllExercises(forcedFresh: false)
     }
     
@@ -27,17 +28,14 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
     }
     
     @objc func loadAllExercises(forcedFresh: Bool) {
-        workoutManager.getAllExercises(forcedFresh: forcedFresh) { (exerciseList, exception) in
-            if let safeError = exception {
-                self.attachedView?.showErrorMessage(message: safeError.message)
-                return
-            }
-            
-            if let exercises = exerciseList {
-                self.exerciseList = exercises
-                self.attachedView?.refreshExerciseList()
-            }
-        }
+        workoutManager.getAllExercises(forcedFresh: forcedFresh)
     }
     
+}
+
+extension AddExerciseViewModel : WorkoutManagerDelegate {
+    func updateExerciseList(newExerciseList: [Exercise]) {
+        self.exerciseList = newExerciseList
+        self.attachedView?.refreshExerciseList()
+    }
 }

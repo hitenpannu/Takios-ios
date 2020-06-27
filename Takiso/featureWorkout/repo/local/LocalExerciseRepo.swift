@@ -18,10 +18,13 @@ protocol LocalExerciseRepo {
     func getAllEquipments() -> [Equipment]
     
     func getExercises() -> [Exercise]
+    
+    func getExercises(ids :[String]) -> [Exercise]
+    
+    func getExercises(bodyParts: [BodyPart], equipments: [Equipment]) -> [Exercise]
 }
 
 class LocalExerciseRepoImpl : LocalExerciseRepo {
-    
     private lazy var bodyPartsRepo = { return BodyPartsLocalRepo() }()
     private lazy var equipmentsRepo = { return EquipmentsLocalRepo() }()
     
@@ -63,9 +66,16 @@ class LocalExerciseRepoImpl : LocalExerciseRepo {
     }
         
     func getExercises() -> [Exercise] {
+        return getExercises(ids: [])
+    }
+    
+    func getExercises(ids :[String] = []) -> [Exercise] {
         // Get all the exercises
         do {
             let exerciseRequest : NSFetchRequest<ExerciseEntity> = ExerciseEntity.fetchRequest()
+            if !ids.isEmpty {
+                exerciseRequest.predicate = NSPredicate.init(format: "id IN %@", ids)
+            }
             let exerciseEntities = try dbContext!.fetch(exerciseRequest)
             return exerciseEntities.map { (exerciseEntity) -> Exercise in
                 let coveredBodyParts = bodyPartsRepo.getBodyParts(for: exerciseEntity.id!)
@@ -77,6 +87,27 @@ class LocalExerciseRepoImpl : LocalExerciseRepo {
             print(error)
         }
         return []
+    }
+    
+    func getExercises(bodyParts: [BodyPart], equipments: [Equipment]) -> [Exercise] {
+        // Get Exercises for bodyParts
+        if !bodyParts.isEmpty {
+          let exerciseIds = bodyPartsRepo.getExerciseIds(bodyParts: bodyParts)
+          var exercises = getExercises(ids: exerciseIds)
+          
+          // Filters fetched exercises for requestes equipments
+          if !equipments.isEmpty {
+              exercises = exercises.filter({ (exercise) -> Bool in
+                  exercise.equipments.contains { (equipment) -> Bool in equipments.contains(equipment)}
+              })
+          }
+          return exercises
+        } else if !equipments.isEmpty{
+          let exerciseIds = equipmentsRepo.getExerciseIds(equipments: equipments)
+          return getExercises(ids: exerciseIds)
+        } else {
+            return getExercises()
+        }
     }
 }
 

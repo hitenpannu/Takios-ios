@@ -90,6 +90,18 @@ class BodyPartsLocalRepo {
             return []
         }
     }
+    
+    func getExerciseIds(bodyParts: [BodyPart]) -> [String] {
+        let bodyPartIds = bodyParts.map { (part) -> String in part.id }
+        do {
+            let request : NSFetchRequest<ExerciseBodyPartEntity> = ExerciseBodyPartEntity.fetchRequest()
+            request.predicate = NSPredicate.init(format: "bodyPartId IN %@", bodyPartIds)
+            return try dbContext!.fetch(request).map({ (entity) -> String in entity.exerciseId! })
+        } catch {
+            print(error)
+            return []
+        }
+    }
 }
 
 extension BodyPartsLocalRepo {
