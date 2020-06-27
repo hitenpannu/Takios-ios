@@ -12,6 +12,7 @@ class AddExerciseViewController: UIViewController {
     
     @IBOutlet weak var exerciseTableView: UITableView!
     
+    @IBOutlet weak var filterButton: UIButton!
     private let viewModel = AddExerciseViewModel()
     
     private lazy var refreshControl : UIRefreshControl = {
@@ -57,6 +58,8 @@ extension AddExerciseViewController : AddExerciseView {
         DispatchQueue.main.async {
             self.refreshControl.endRefreshing()
             self.exerciseTableView.reloadData()
+            print("(\(self.viewModel.getTotalNumberOfFilters()))")
+            self.filterButton.titleLabel?.text = "(\(self.viewModel.getTotalNumberOfFilters()))"
         }
     }
     

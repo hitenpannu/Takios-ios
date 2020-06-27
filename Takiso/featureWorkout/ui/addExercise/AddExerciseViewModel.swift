@@ -31,6 +31,13 @@ class AddExerciseViewModel: BaseViewModel<AddExerciseView> {
         workoutManager.getAllExercises(forcedFresh: forcedFresh)
     }
     
+    func getTotalNumberOfFilters() -> Int {
+        if let currentFilter = workoutManager.getCurrentFilters() {
+            return currentFilter.bodyParts.count + currentFilter.equipments.count
+        } else {
+          return 0
+        }
+    }
 }
 
 extension AddExerciseViewModel : WorkoutManagerDelegate {
